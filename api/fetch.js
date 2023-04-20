@@ -10,7 +10,7 @@ const openAi = new OpenAIApi(
 
 const fetchedData = async (prompt) => {
     const completion = await openAi.createChatCompletion({
-        model: "gpt-3.5-turbo",
+        model: "gpt-4",
         messages: [{ role: "user", content: prompt }],
     });
 

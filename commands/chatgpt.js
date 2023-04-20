@@ -37,8 +37,9 @@ module.exports = {
             // Fetch data
             response = await fetchedData(text);
         } catch (e) {
-            // console.log(e);
-            response = 'Le model IA n\'est pas disponible actuellement. Désolé le sang...';
+            console.log(e.response.status);
+            console.log(e.response.statusText);
+            response = 'Le model IA n\'est pas disponible actuellement. Désolé le sang...' + `\n\nStatus code : ${e.response.status}`;
         }
 
         const embededMessage = (new MessageEmbed())
